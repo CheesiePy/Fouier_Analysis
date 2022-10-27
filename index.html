@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Fourie Analysis</h1>
+    </header>
+    
+    <section>
+        <article>
+            <h2> linear algebra reminders</h2>
+
+            <p>
+                מכפלה פנימית
+            </p>
+
+            <pre>
+                let W be a vector space over a field F
+                Inner product of two vectors u,v in W
+                (*,*) ; WxW -> F
+                such that:
+                    1. &lt; u,v &gt; >= 0
+                    2. &lt; u,v &gt; = 0 iff u = 0 or v = 0
+                    3. complex conjugate - &lt; u,v&gt; = &lt; u,v&gt;
+                
+                for all a,b in the complex numbers
+                and all u,v,w in W
+                &lt; a*u + b*v, w> = a*&lt; u,w> + b*&lt; v,w>
+
+                
+
+                (*,*) is a bilinear map
+                (*,*) is symmetric
+                (*,*) is positive definite
+
+                example:
+                a. W = R^2
+                x = (x1,x2) and y = (y1,y2)
+                &lt; x,y> = x1*y1 + x2*y2
+                this is a dot product
+            
+                proff:
+                1. &lt; x, x> = x1^2 + x2^2 >= 0
+
+                1. &lt; x, x> = 0 iff x = 0
+
+                2. &lt; a*x + b*y, z> = &lt;(a*x1 + b*y1, a*x2 + b*y2), (z1, z2)>
+                = a*x1*z1 + b*y1*z1 + a*x2*z2 + b*y2*z2
+                = a(x1*z1 + x2*z2) + b(y1*z1 + y2*z2)
+                = a*&lt; x,z> + b*&lt; y,z>
+
+                3. &lt; x, y> = x1*y1 + x2*y2 = y1*x1 + y2*x2 = &lt; y,x>
+                note: complax conjugate is the same number in the real number field
+
+                example:
+                b. W = C^3
+                x = (x1,x2,x3) and y = (y1,y2,y3)
+                y~ = conjugate of y
+                &lt; x,y> = sigma = for(i=1 to 3) {x_i*(~y_i)}
+                prove this is a inner product:
+                1. &lt; x, x> = sigma() = for(i=1 to 3) {x_i*(~x_i)} = |x1|^2 + |x2|^2 + |x3|^2 = sigma(|xi|^2) >= 0
+
+                2. let x,y,z be vectors in C^3 and a,b be complex numbers
+                &lt; a*x + b*y, z> = sigma() = for(i=1 to 3) {a*x_i*(~z_i) + b*y_i*(~z_i)}
+
+                3. &lt; x, y> = sigma() = for(i=1 to 3) {x_i*(~y_i)} = sigma(y_i*(~x_i)) = &lt; y,x>
+
+                reminder:
+                    the conjugate of a multiplication is the same as the multiplication of the conjugates
+                reminder:
+                    the conjugate of a sum is the same as the sum of the conjugates
+                
+
+               
+                the properties of the inner product:
+                let W be a vector space over a field F
+                a. &lt; u,v > = &lt; v, u&gt;
+
+                b. let W be a vector space with an inner product
+                (this space is called a innter product space)
+
+                for all u,v,w in W and a,b in F and F = C
+
+                1. &lt; u, a*v + b*w> = ~a*&lt; v,w> + ~b*&lt; v,w>
+                     proff:
+                     &lt; u, a*v + b*w&gt; = &lt; a*u + b*w, v&gt; = ~(a*&lt; u,v&gt; + b*&lt; w,v&gt;)
+                     = ~(a*&lt; u,v&gt;) + ~(b*&lt; w,v&gt;)
+                     = ~a*~~(&lt; v,u &gt;) + ~b*~~(&lt; v,h&gt;)
+                     = ~a*&lt; v,u &gt; + ~b*&lt; v,w&gt;
+                2.
+
+                3. for all a in C and f in w:
+                    /&lt;a*f, a*f&gt; = |a|^2*&lt; f, f &gt;
+                    proff:
+                    acording to the 2 property:
+                    a*&lt;f, a*f&gt;  = a*~(&lt;Aa*f, f&gt;)
+                    = a*~(a*&lt;f, f&gt;) = a*(~a)*~(&lt;f, f&gt;) = |a|^2*&lt;f, f&gt;
+                    
+
+                example:
+                    let W = C[a,b] be the vector space of all Continuous functions on [a,b] and gets complex values
+                    let f,g be two functions in W
+                    
+                    f(x) = u(x) + iv(x)
+
+                    lets define the inner product on W:
+                        &lt;f, g&gt; = integral from a to b of ( f(x) * ~(y(x)) )dx
+
+                example:
+                f(x) cis(x) = cos(x) + i*sin(x)
+                f([0,2pi])
+
+                how to calculate the integral of f(x)
+                integral[a,b](f(x))dx = integral[a,b](u(x) + i*v(x))dx0 = integral[a,b](u(x))dx + I*integral[a,b](v(x))dx 
+
+            </pre>
+
+        </article>
+    </section>
+</body>
+</html>
